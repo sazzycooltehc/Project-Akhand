@@ -4,6 +4,7 @@
  */
 
 import { useState, useCallback } from 'react';
+import { motion } from 'motion/react';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { MapCanvas } from './components/MapCanvas';
@@ -56,29 +57,36 @@ export default function App() {
             onHoverNode={handleHover}
           />
 
-          {/* Anomaly Overlay (Theme extra) */}
-          <div className="absolute top-8 right-8 w-64 pointer-events-none z-10">
+          {/* Draggable Monitoring Card */}
+          <motion.div 
+            drag
+            dragMomentum={false}
+            className="absolute top-32 right-12 w-64 z-50 cursor-move"
+          >
             <div className={cn(
-              "p-4 backdrop-blur border rounded-lg shadow-2xl animate-in fade-in duration-1000",
+              "p-4 backdrop-blur border rounded-lg shadow-2xl transition-colors",
               theme === 'dark' 
                 ? "bg-slate-950/80 border-red-500/20" 
-                : "bg-white/80 border-red-500/30 shadow-red-500/5"
+                : "bg-white/90 border-red-500/30 shadow-red-500/10"
             )}>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                <span className="text-[10px] font-black text-red-500 uppercase tracking-widest">Active Monitoring</span>
+              <div className="flex items-center justify-between mb-2 pointer-events-none">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                  <span className="text-[10px] font-black text-red-500 uppercase tracking-widest">Active Monitoring</span>
+                </div>
+                <div className="text-[8px] text-slate-500 font-mono">DRAG_ENAB</div>
               </div>
               <p className={cn(
-                "text-[11px] leading-relaxed mb-3",
+                "text-[11px] leading-relaxed mb-3 pointer-events-none",
                 theme === 'dark' ? "text-slate-300" : "text-slate-600"
               )}>
-                Geospatial parity maintained. Analyzing sector stability.
+                Geospatial parity maintained. Analyzing sector stability for anomalies.
               </p>
-              <div className="h-1 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+              <div className="h-1 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden pointer-events-none">
                 <div className="h-full bg-blue-500 w-[85%]"></div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </main>
 
         {/* Global Tooltip */}
