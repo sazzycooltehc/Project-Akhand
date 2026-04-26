@@ -53,7 +53,7 @@ export const STATES: Partial<GeoNode>[] = [
   { name: "Sri Lanka", coords: [80.7, 7.8], core: "nagpur" },
   { name: "Bangladesh", coords: [90.0, 23.7], core: "dhaka" },
   { name: "Bhutan", coords: [90.43, 27.51], core: "guwahati" },
-  { name: "Maldives", coords: [73.5, 4.2], core: "nagpur" }
+  { name: "Maldives", coords: [73.5, 4.2], core: "kurnool" }
 ];
 
 export const UTS: Partial<GeoNode>[] = [
@@ -65,7 +65,7 @@ export const UTS: Partial<GeoNode>[] = [
   { name: "NCT of Delhi", coords: [77.10, 28.61], core: "delhi" },
   { name: "Puducherry", coords: [79.80, 11.94], core: "nagpur" },
   { name: "Ladakh", coords: [77.57, 34.15], core: "delhi" },
-  { name: "Male", coords: [73.51, 4.17], core: "nagpur" }
+  { name: "Male", coords: [73.51, 4.17], core: "kurnool" }
 ];
 
 export const ALL_NODES: GeoNode[] = [
