@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+    --bg-main: #020617;
+    --bg-panel: rgba(15, 23, 42, 0.4);
+    --bg-sidebar: rgba(2, 6, 23, 0.8);
+    --border: rgba(59, 130, 246, 0.2);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #3b82f6;
+    --accent-glow: rgba(59, 130, 246, 0.2);
+    --grid-opacity: 0.05;
+}
+
+:root.light {
+    --bg-main: #f8fafc;
+    --bg-panel: rgba(255, 255, 255, 0.6);
+    --bg-sidebar: rgba(241, 245, 249, 0.9);
+    --border: rgba(59, 130, 246, 0.2);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #2563eb;
+    --accent-glow: rgba(37, 99, 235, 0.1);
+    --grid-opacity: 0.1;
+}
+
+body {
+  @apply antialiased select-none overflow-hidden transition-colors duration-300;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.tactical-grid {
+  background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.radial-command {
+  background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-blue-500/30 rounded-full;
+}
+
